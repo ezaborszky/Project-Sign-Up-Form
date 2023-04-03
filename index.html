@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&family=Orbitron&family=Roboto:ital,wght@0,300;1,100;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hero">
+        <div class="left">
+            <div class="left-child1"></div>
+            <div class="left-child2">
+                <img id="odin-lined" src="odin-lined.png" alt="">
+                <div >ODIN</div>
+            </div>
+            <div class="left-child3">Photo by &#32;<a href="https://unsplash.com/@guzenko">Natalia Guzenko &#32;</a><div class="span"> on &#32;</div><a href="https://unsplash.com/"> Unsplash.com</a></div>
+        </div>
+        <div class="right">
+            <div class="right-child1">
+                <h1>This is not a real online service! But it totally could be. It wouldn't be an awesome one though. </h1>
+                <h2>But who <span style="font-style: italic;">really</span> knows what awesome is anyway....</h2>
+            </div>
+            
+            <div id="form-div">
+                <h2>Let's do this!</h2>
+                    <form id="form1" class="form" action="https://httpbin.org/post" method="post">
+                        
+                        <div class="form-column">
+
+                            <div>
+                                <label for="first_name">first name</label>
+                                <input  name="first_name" type="text" id="first_name">
+                            </div>    
+
+                            <div>
+                                <label for="last_name">last name</label>
+                                <input name="last_name" type="text" id="last_name">
+                            </div>
+
+                            <div>   
+                                <label for="email">email</label>
+                                <input name="email" type="email" id="email" title="something@somewhere.com">
+                            </div> 
+
+                        </div>
+
+
+                        <div class="form-column">
+
+                            <div> 
+                                <label for="phone_number">phone number</label>
+                                <input name="phone_number" type="tel" id="phone_number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="111-22-333">
+                            </div> 
+                            <div> 
+                                <label for="password">password</label>
+                                <input type="password" id="password1" pattern="[a-zA-Z0-9_.-]{8,}" title="At least 8 character." required>
+                            </div> 
+                            <div> 
+                                <label for="repeat_password">confirm password</label>
+                                <input name="password" type="password" id="repeat_password" pattern="[a-zA-Z0-9_.-]{8,}" title="At least 8 character." required>
+                            </div> 
+
+                        </div>
+                      </form>
+                    
+            </div>
+            <div class="right-child2">
+                <div><input id="submit-button" type="submit" form="form1" value="Create Account"/></div>
+            <div>Already have an account? <span><a href="">Log in</a></span></div>
+            </div>
+            
+        </div>
+    </div>
+    
+</body>
+
+<script>
+    const password1 = document.getElementById("password1")
+    const password2 = document.getElementById("repeat_password")
+    const submitButton = document.getElementById("submit-button")
+    submitButton.addEventListener('click', (event) => {
+        if(password1.value !== password2.value) {password1.setCustomValidity("Passwords do not match")} else {password1.setCustomValidity("")}
+        
+    }) 
+</script>
+</html>
